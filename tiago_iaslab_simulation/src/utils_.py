@@ -39,7 +39,7 @@ def detect_obstacles(ranges):
         if gradient_data[gradient_index_found] < 0:
             for gradient_index_next, gradient_data_next in enumerate(gradient_data[gradient_index_found+1:]):
                 if gradient_data_next > 0.1:
-                    obs_indexes.append((gradient_index_found, gradient_index_found+gradient_index_next+1))
+                    obs_indexes.append((gradient_index_found+1, gradient_index_found+gradient_index_next))
                     break
                 elif gradient_data_next < -0.1:
                     break
