@@ -2,7 +2,7 @@
 import rospy
 import time
 import actionlib
-from move_base_msg import msg
+from move_base_msgs import msg
 
 
 def feedback_callback(feedback):
