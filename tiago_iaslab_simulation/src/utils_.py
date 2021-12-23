@@ -86,6 +86,7 @@ def get_obstacle_distance(index_start, index_end, a, x):
     alpha_rad = (len_indexes / len_ranges) * range_rad
     alpha_2_rad_tg = math.tan(alpha_rad / 2)
     radius = alpha_2_rad_tg * a
+    print('get_obstacle_distance', alpha_2_rad_tg, a, radius)
     return radius + x, radius
 
 
