@@ -92,10 +92,10 @@ def same_object(c1, c2, r):
     return math.sqrt((c1[0] - c2[0]) ** 2 + (c1[1] - c2[1]) ** 2) < r
 
 
-def is_obstacle_exists(c, obstacles, radius=0.9):
+def is_obstacle_exists(c, obstacles, radius=1.2):
     is_same = False
     for i in obstacles:
-        if same_object(i, (c[0],c[1]), radius):
+        if same_object(i, (c[0], c[1]), radius):
             is_same = True
     return is_same
 
