@@ -43,7 +43,11 @@ def detect_obstacles(ranges):
                     break
                 elif gradient_data_next < -0.1:
                     break
+    print()
     print(obs_indexes)
+    for i in obs_indexes:
+        print(data[i[0]], data[i[1]])
+    print()
     return obs_indexes
 
 
