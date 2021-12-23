@@ -54,7 +54,7 @@ def laser_callback(msg):
             obs.append((x_, y_))
 
     if len(obs) > 0:
-        print(obs)
+        print('FINAL POSES: ', obs)
 
 
 rospy.init_node('service_server')
