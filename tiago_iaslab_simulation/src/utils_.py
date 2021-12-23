@@ -71,12 +71,8 @@ def get_obstacle_position(d, index_mid, x, y):
     range_max_rad = 1.91
     range_rad = range_max_rad - range_min_rad
     alpha_rad = (float((index_mid - 333)) / len_ranges) * range_rad  # rate
-    print(x, y, alpha_rad, math.cos(alpha_rad))
-
     x += d * math.cos(alpha_rad)
     y += d * math.sin(alpha_rad)
-    print(x, y, alpha_rad, math.cos(alpha_rad))
-
     return x, y
 
 
