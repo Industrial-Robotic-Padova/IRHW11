@@ -42,6 +42,7 @@ def laser_callback(msg):
             ranges_[obstacle_index_range[0]],
             ranges_[obstacle_index_center]
         )
+        print(obstacle_index_center, ranges_[obstacle_index_center])
         print('d, r', d, r)
 
         x_, y_ = get_obstacle_position(
