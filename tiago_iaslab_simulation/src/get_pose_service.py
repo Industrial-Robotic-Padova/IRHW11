@@ -6,7 +6,7 @@ from geometry_msgs.msg import PoseWithCovarianceStamped, Pose
 from sensor_msgs.msg import LaserScan
 import numpy as np
 import math
-from .utils_ import *
+from utils_ import *
 
 
 robot_pos = np.array([])
