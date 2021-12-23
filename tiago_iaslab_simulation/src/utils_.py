@@ -71,6 +71,7 @@ def get_obstacle_position(d, index_mid, x, y):
     range_max_rad = 1.91
     range_rad = range_max_rad - range_min_rad
     alpha_rad = (float((index_mid - 333)) / len_ranges) * range_rad  # rate
+    print("alpha_rad:", alpha_rad)
     x += d * math.cos(alpha_rad)
     y += d * math.sin(alpha_rad)
     return x, y
@@ -84,8 +85,8 @@ def get_obstacle_distance(index_start, index_end, a, x):
     len_indexes = index_end - index_start
     alpha_rad = (len_indexes / len_ranges) * range_rad
     alpha_2_rad_tg = math.tan(alpha_rad / 2)
-    b = alpha_2_rad_tg * a
-    return b + x, b
+    radius = alpha_2_rad_tg * a
+    return radius + x, radius
 
 
 def same_object(c1, c2, r):
