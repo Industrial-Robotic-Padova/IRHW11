@@ -43,11 +43,11 @@ def detect_obstacles(ranges):
                     break
                 elif gradient_data_next < -0.1:
                     break
-    print()
-    print(obs_indexes)
-    for i in obs_indexes:
-        print(data[i[0]], data[i[1]])
-    print()
+    # print()
+    # print(obs_indexes)
+    # for i in obs_indexes:
+    #     print(data[i[0]], data[i[1]])
+    # print()
     return obs_indexes
 
 
@@ -85,7 +85,6 @@ def get_obstacle_distance(index_start, index_end, a, x):
     alpha_rad = (len_indexes / len_ranges) * range_rad
     alpha_2_rad_tg = math.tan(alpha_rad / 2)
     radius = alpha_2_rad_tg * a
-    print('get_obstacle_distance', alpha_rad, alpha_2_rad_tg, a, radius)
     return radius + x, radius
 
 
