@@ -6,7 +6,7 @@ from geometry_msgs.msg import PoseWithCovarianceStamped, Pose
 from sensor_msgs.msg import LaserScan
 import numpy as np
 import math
-from . import utils
+from .utils_ import *
 
 
 robot_pos = np.array([])
@@ -23,7 +23,7 @@ def service_callback(request):
 def sub_callback(msg):
     print(msg.pose.pose)
     global robot_pos
-    robot_pos = utils.get_trans_matrix_robot(
+    robot_pos = get_trans_matrix_robot(
         msg.pose.pose.orientation.z,
         msg.pose.pose.orientation.x,
         msg.pose.pose.orientation.y,
@@ -34,22 +34,22 @@ def sub_callback(msg):
 def laser_callback(msg):
     ranges_ = list(msg.ranges)
 
-    for obstacle_index_range in utils.detect_obstacles(ranges_):
+    for obstacle_index_range in detect_obstacles(ranges_):
         obstacle_index_center = int((obstacle_index_range[0] + obstacle_index_range[1]) / 2)
-        d, r = utils.get_obstacle_distance(
+        d, r = get_obstacle_distance(
             obstacle_index_range[0],
             obstacle_index_range[1],
             ranges_[obstacle_index_range[0]],
             ranges_[obstacle_index_center]
         )
 
-        x_, y_ = utils.get_obstacle_position(
+        x_, y_ = get_obstacle_position(
             d,
             obstacle_index_center,
             robot_pos[0][3],
             robot_pos[1][3],
         )
-        if not utils.is_obstacle_exists((x_, y_), obs):
+        if not is_obstacle_exists((x_, y_), obs):
             obs.append((x_, y_))
 
     if len(obs) > 0:
