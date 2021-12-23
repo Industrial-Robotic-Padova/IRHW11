@@ -25,9 +25,9 @@ def sub_callback(msg):
     global robot_pos
     robot_pos = get_trans_matrix_robot(
         msg.pose.pose.orientation.z,
-        msg.pose.pose.orientation.x,
-        msg.pose.pose.orientation.y,
-        msg.pose.pose.orientation.z
+        msg.pose.pose.position.x,
+        msg.pose.pose.position.y,
+        msg.pose.pose.position.z
     )
 
 
